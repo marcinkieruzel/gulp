@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: yellow;
+    @media (min-width: 421px) {
+        background-color: white;
+    }
+}
+//Opcjonalnie mixin dla section i sidebar
+@mixin div($bc) {
+  background-color: $bc;
+  height: 400px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 400px;
+  float: left;
+  width: 100%;
+}
+//zmienna z breakpointem
+$break: "(min-width: 600px)";
+
+//mixin dla media query
+@mixin tablet {
+  @media #{$break} {
+    //Content jest placeholderem - mozna pod niego podstawic cokolwiek
+    @content;
+  }
+}
+.container {
+    .sidebar {
+        @include div(#999999);
+
+        @include tablet {
+          width: 20%;
+        }
+
+    }
+    section {
+      @include div(blue);
+
+      @include tablet {
+        width: 80%;
+      }
+
+    }
+}

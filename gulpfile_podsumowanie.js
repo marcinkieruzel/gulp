@@ -73,7 +73,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 //Te dwie paczki sprawią, że gulp watch i gulp-serve nie będzie się wywalał przy każdym błędzie
 var plumber = require('gulp-plumber');
-var util = require('gulp-util');
+var gutil = require('gulp-util');
 
 
 
