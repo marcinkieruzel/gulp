@@ -3,18 +3,25 @@ body {
     padding: 0;
     overflow-x: hidden;
 }
-//Przykład użycia mapy
+
+
+//Przykład użycia mapy - razem z pętlą for i pętlą each
+//Zobaczcie jak przy pomocy petli moge generowac wiele styli dla elementow zaledwie w kilku liniach
+
+//Więcej o mapach: https://webdesign.tutsplus.com/tutorials/an-introduction-to-sass-maps-usage-and-examples--cms-22184
+
+
 //Deklaracja mapy:
 $colors: (one: red, two: yellow, three: green);
 
 #full {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     padding: 0;
 
     div {
         width: 100%;
-        height: 10%;
+        height: 100px;
         display: block;
         //Przyklad pętli for
         @for $i from 1 to 21 {
@@ -29,6 +36,47 @@ $colors: (one: red, two: yellow, three: green);
                     background-color: lighten(map-get($colors, two), 2 * $i);
                 }
             }
+        }
+    }
+}
+
+
+//Inny przyklad mapy
+
+//Deklaracja mapy bardziej zawansowanej:
+
+$kulki: (one: yellow, two: green, three: red, four: purple, five: navy, six: gray, seven: pink, eight: violet, nine: blue, ten: crimson);
+
+//Tworzę 10 kulek
+
+#icons {
+    display: flex;
+    div {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+
+        //Zmienna posłyży mi tylko do stworzenia indexu kulek
+        $counter: 1;
+
+        //Robię iterację po kulkach, każdej dodaję kolor: wartoś klucza i content: samą nazwę klucza
+        @each $key, $value in $kulki {
+
+            &:nth-child(#{$counter}) {
+                background-color: $value;
+                &:before {
+                    content: quote($key); //Funkcja quote opakowuje mi $key w cudzysłow
+
+                }
+            }
+            //Zwiększam index
+            $counter: $counter + 1;
+
         }
     }
 }
