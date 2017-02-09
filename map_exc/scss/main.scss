@@ -104,7 +104,7 @@ $width: 10vw;
         @while $step < 11 {
             &:nth-child(#{$step}) {
                 width: $width * $step;
-                background-color: darken(lightblue, 5 * $step);
+                background-color: adjust-hue(blue, 30deg * $step);
             }
             $step: $step + 1;
         }
