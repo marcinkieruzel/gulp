@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+//Przykład użycia mapy
+//Deklaracja mapy:
+$colors: (one: red, two: yellow, three: green);
+
+#full {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+
+    div {
+        width: 100%;
+        height: 10%;
+        display: block;
+        //Przyklad pętli for
+        @for $i from 1 to 21 {
+            &:nth-child(#{$i}) {
+                //Jeżeli jest nieparzyste to pobieram z mapy color one i rozjaśniam
+                //map-get('mapa', 'klucz w mapie' ) - pobieranie koloru z mapy
+                @if $i % 2 != 0 {
+                    background-color: lighten(map-get($colors, one), 2 * $i);
+                }
+                //Jeżeli parzyste pobieram z mapy color two i rozjaśniam
+                @if $i % 2 == 0 {
+                    background-color: lighten(map-get($colors, two), 2 * $i);
+                }
+            }
+        }
+    }
+}
