@@ -65,6 +65,8 @@ $kulki: (one: yellow, two: green, three: red, four: purple, five: navy, six: gra
         $counter: 1;
 
         //Robię iterację po kulkach, każdej dodaję kolor: wartoś klucza i content: samą nazwę klucza
+        //Uwaga w prezentacji tego nie bylo - w taki sposob moge zrobic iteracje po mapie
+        //(W wypadku listy byloby to @each $value in $lista), w mapie biorę jeszcze pod uwagę klucz
         @each $key, $value in $kulki {
 
             &:nth-child(#{$counter}) {
