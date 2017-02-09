@@ -10,7 +10,9 @@ body {
 
 //Więcej o mapach: https://webdesign.tutsplus.com/tutorials/an-introduction-to-sass-maps-usage-and-examples--cms-22184
 
-
+/*
+ * Żaluzje
+ */
 //Deklaracja mapy:
 $colors: (one: red, two: yellow, three: green);
 
@@ -40,7 +42,9 @@ $colors: (one: red, two: yellow, three: green);
     }
 }
 
-
+/*
+ * Kulki
+ */
 //Inny przyklad mapy
 
 //Deklaracja mapy bardziej zawansowanej:
