@@ -55,6 +55,7 @@ $kulki: (one: yellow, two: green, three: red, four: purple, five: navy, six: gra
 
 #icons {
     display: flex;
+    flex-wrap: wrap;
     div {
         width: 100px;
         height: 100px;
@@ -83,6 +84,29 @@ $kulki: (one: yellow, two: green, three: red, four: purple, five: navy, six: gra
             //Zwiększam index
             $counter: $counter + 1;
 
+        }
+    }
+}
+//Przylad uzycia pętli @while
+/*
+ * Schody
+ */
+
+$step: 1;
+$width: 10vw;
+
+#starway {
+    display: flex;
+    flex-direction: column;
+    div {
+        background-color: red;
+        height: 100px;
+        @while $step < 11 {
+            &:nth-child(#{$step}) {
+                width: $width * $step;
+                background-color: darken(lightblue, 5 * $step);
+            }
+            $step: $step + 1;
         }
     }
 }
