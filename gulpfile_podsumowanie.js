@@ -119,3 +119,4 @@ gulp.task("watch", function() {
  * 1. gulp watch, gulp sass lub gulp sass nie działają - sprawdź czy widzisz w katalogu projektu folder node_modules, sprawdź czy w pliku package.json w devDependencies są wszystkie wtyczki - eventualnie doinstaluj wtyczki np. npm install gulp gulp-sass --save-dev, jeżli nie ma katalogu node_modules a jest plik package.json w terminalu wpisz npm install
  * 2. gulp watch, gulp serve lub gulp sass działają ale nie widzę zmian - sprawdź czy w pliku index.html załączyłeś plik main.css, sprawdź czy terminal jest otwarty we właściwym katalogu z twoim projektem
  */
+//npm install gulp gulp-sass gulp-autoprefixer browser-sync gulp-plumber gulp-util gulp-sourcemaps --save
